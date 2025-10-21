@@ -24,7 +24,26 @@
       margin-top:60px; margin-left:80px; font-size:20px;
     }
     .leftsection { background-color:black; font-size:2.3rem; margin-top:80px; margin-left:20px; }
-    .rightsection img { width:100%; height:80%; margin:20px 50px 0 40px; }
+    .rightsection { 
+      display: flex;
+      flex-direction: column;
+      width: 100%; 
+      margin:20px 50px 0 40px; 
+    }
+    .rightsection img { 
+      width:100%; 
+      height:auto; 
+      display: block;
+    }
+
+    /* D-ID Agent Container */
+    #did-agent-container {
+      width: 100%;
+      height: 500px;
+      margin-top: 20px;
+      background-color: rgba(18,18,67,0.3);
+      border-radius: 10px;
+    }
 
     .purple { color:rgb(89,31,144); }
     #element { color:purple; font-weight:bold; }
@@ -54,6 +73,8 @@
       </div>
       <div class="rightsection">
         <img src="https://wallpaperaccess.com/full/3617099.jpg" alt="">
+        <!-- D-ID Agent Container (Below Image) -->
+        <div id="did-agent-container"></div>
       </div>
     </section>
   </main>
@@ -69,16 +90,15 @@
     });
   </script>
 
-  <!-- D-ID Web Agent Integration -->
+  <!-- D-ID Web Agent Integration (Full Mode) -->
   <script type="module"
       src="https://agent.d-id.com/v2/index.js"
-      data-mode="fabio"
+      data-mode="full"
       data-client-key="Z29vZ2xlLW9hdXRoMnwxMTY0ODc5MTc0ODcwOTE0MjY4ODU6U0VGX0RTOGxrVFFsNUtkTm1RU1dH"
       data-agent-id="v2_agt_xbPqAw6G"
       data-name="did-agent"
       data-monitor="true"
-      data-orientation="horizontal"
-      data-position="right">
+      data-target-id="did-agent-container">
   </script>
 
   <!-- Optional: Fallback wrapper for any menu/modal JS -->
